@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chat.css">
+    <title>Chat Page</title>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header" style="position: relative;">
+            <input type="text" id="search-input" placeholder="Search..." style="display: inline-block; position: relative; z-index: 1; width: 200px;">
+            <span id="search-icon" style="cursor: pointer; margin-left: 10px;">🔍</span>
+            <div class="profile-photo" id="profile-photo" style="background-color: gray; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; margin-left: auto; margin-top: 5px; position: absolute; right: 10px; top: 5px; z-index: 0;">
+                <input type="file" id="file-input" style="display: none;">
+            </div>
+        </header>
+        <div class="chat-window" id="chat-window">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="chat-input" style="position: relative;">
+            <span id="add-contact-icon" style="cursor: pointer; margin-right: 10px;">➕</span>
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
+            <div id="back-button" style="display: none; cursor: pointer; position: absolute; left: 10px; top: 45px; z-index: 0;">
+                ⬅️ Back
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Contact List -->
+    <div id="contact-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; border: 1px solid #ccc; padding: 40px; width: 600px; height: 400px; z-index: 1000; overflow-y: auto;">
+        <h2>Contact List</h2>
+        <input type="text" id="new-contact-input" placeholder="Enter contact ID" style="width: 100%; margin-bottom: 10px;">
+        <button id="add-contact-button" style="margin-bottom: 20px;">Add Contact</button>
+        <ul id="contact-list">
+            <!-- Contacts will be populated here -->
+        </ul>
+        <button id="close-modal" style="margin-top: 10px;">Close</button>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>
